@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  </head>
+  <body>
+  <section class="relative pb-8 md:pb-16 lg:pb-24 overflow-y-scroll min-h-screen overflow-y-auto" x-data="{ mobileNavOpen: false }">
+    <div class="hidden sm:block absolute top-0 left-0 bottom-0 sm:w-3/12 lg:w-2/5 bg-blue-700 border-r-50 border-red-600"></div>
+    <div class="relative container px-4 mx-auto">
+      <div class="w-full sm:w-9/12 lg:w-3/5 pl-6 lg:pl-16 ml-auto">
+        <div class="mt-10 lg:mt-20 mb-20">
+          <div class="mb-8 inline-block px-4 py-2 bg-black text-white font-bold text-sm tracking-wider uppercase">today's date: {{ gamedate }}</div>
+            {% if isThereAGameToday  %}
+              <h2 class="max-w-base sm:max-w-md mb-8 text-5xl lg:text-7xl leading-[0.9] font-black font-heading tracking-tight text-black">
+                ⚾️ today the {{ visiting_team }}  
+                <br/>
+                <span class="text-blue-700">
+                 are playing 
+                  <br/>
+                </span>
+                the {{ home_team }}
+              </h2>
+              <p class="max-w-lg mb-8 text-xl lg:text-2xl leading-relaxed text-gray-700 font-medium">🏟️ {{ venue }}</p>
+              <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                <a class="inline-block px-6 py-4 bg-blue-700 hover:bg-yellow-300 text-white hover:text-black font-black font-heading text-xl border-4 border-black transition-all hover:translate-x-2 hover:translate-y-2 shadow-[8px_8px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000]" href="#">{{ start_time }} (Central)</a>
+              </div>
+        </div>
+        <div class="border-t-4 border-black py-12">
+          <div class="flex flex-wrap items-center justify-start gap-6">
+            <div class="w-auto text-center lg:text-left">
+              <p class="max-w-l mb-8 text-xl lg:text-2xl leading-relaxed text-gray-700 font-medium">where to watch/listen:</p>
+              {% for item in items %}
+              <div class="inline-block gap-4 mx-1 my-.2 px-6 py-3 bg-blue-700 text-white font-black font-heading text-sm border-4 border-black shadow-[4px_4px_0px_0px_#000]">{{ item }}</div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+            {% else %}
+              <h2 class="max-w-xs sm:max-w-md mb-8 text-5xl lg:text-7xl leading-[0.9] font-black font-heading tracking-tight text-black">
+               whaddaya say, it's an off day! 
+              </h2>
+            <h3>that means no baseball, today. <p>scram.</p> <br />go watch a bulls game or something<sub><sub><sub><p>...or go do that laundry you've been putting off..I dunno, man I'm not your dad.</p></sub></sub></sub></h3>
+              <p>&nbsp;</p>
+              <img id = "randomImageOffDay" class="h-auto max-w-full" src="https://media1.tenor.com/m/-mnpSBJdhkgAAAAd/bear-yawn.gif" /><p>&nbsp;</p>
+            {% endif %}
+          </div>
+    </div>
+  </section>
+  <script>
+    window.onload = function() {
+      // Array of image paths
+      const images = [
+          'https://media1.tenor.com/m/3xOwPVHi66sAAAAd/cubs-anthony-rizzo.gif',
+          'https://media1.tenor.com/m/0Fx-IEnxEcoAAAAC/bear-sleeping.gif',
+          'https://media1.tenor.com/m/Mzh05_WOBkAAAAAd/chicago-cubs-seiya-suzuki.gif',
+          'https://media1.tenor.com/m/TFKcG-gA18wAAAAC/cubs-david-ross.gif',
+          'https://media1.tenor.com/m/WYCKfjTzhdYAAAAC/joe-maddon.gif',
+          'https://media1.tenor.com/m/KiVaXUzY1o4AAAAd/ferris-bueller-ferris-buellers-day-off.gif',
+          'https://media1.tenor.com/m/SdEFsu2ZYNwAAAAd/disappointed-major-league-baseball.gif',
+          'https://media1.tenor.com/m/ciNDyf6AgH0AAAAd/disappointed-disappointed-fan.gif',
+      ];
+
+      // Generate a random index based on the array length
+      const randomIndex = Math.floor(Math.random() * images.length);
+
+      // Update the image source
+      document.getElementById('randomImageOffDay').src = images[randomIndex];
+    };
+  </script>
+
+
+</body>
+</html>
