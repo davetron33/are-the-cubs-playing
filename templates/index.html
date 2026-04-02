@@ -5,14 +5,13 @@
 
   </head>
   <body>
-  <section class="relative pb-8 md:pb-16 lg:pb-24 overflow-y-scroll min-h-screen overflow-y-auto" x-data="{ mobileNavOpen: false }">
-    <div class="hidden sm:block absolute top-0 left-0 bottom-0 sm:w-3/12 lg:w-2/5 bg-blue-700 border-r-50 border-red-600"></div>
-    <div class="relative container px-4 mx-auto">
-      <div class="w-full sm:w-9/12 lg:w-3/5 pl-6 lg:pl-16 ml-auto">
-        <div class="mt-10 lg:mt-20 mb-20">
+  <section class="relative  overflow-y-scroll min-h-screen min-w-screen overflow-y-auto" x-data="{ mobileNavOpen: false }">
+    <div class="relative container  min-w-screen mx-auto">
+      <div class="min-w-screen">
+        <div class="mb-20 border-t-50 border-red-600 pl:5">
           <div class="mb-8 inline-block px-4 py-2 bg-black text-white font-bold text-sm tracking-wider uppercase">today's date: {{ gamedate }}</div>
             {% if isThereAGameToday  %}
-              <h2 class="max-w-base sm:max-w-md mb-8 text-5xl lg:text-7xl leading-[0.9] font-black font-heading tracking-tight text-black">
+              <h2 class="max-w-base sm:max-w-xlg mb-8 text-5xl lg:text-7xl ml-4 leading-[0.9] font-black font-heading tracking-tight text-black">
                 ⚾️ today the {{ visiting_team }}  
                 <br/>
                 <span class="text-blue-700">
@@ -21,12 +20,12 @@
                 </span>
                 the {{ home_team }}
               </h2>
-              <p class="max-w-lg mb-8 text-xl lg:text-2xl leading-relaxed text-gray-700 font-medium">🏟️ {{ venue }}</p>
-              <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-                <a class="inline-block px-6 py-4 bg-blue-700 hover:bg-yellow-300 text-white hover:text-black font-black font-heading text-xl border-4 border-black transition-all hover:translate-x-2 hover:translate-y-2 shadow-[8px_8px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000]" href="#">{{ start_time }} (Central)</a>
+              <p class="max-w-lg ml-4 mb-8 text-xl lg:text-2xl leading-relaxed text-gray-700 font-medium">🏟️ {{ venue }}</p>
+              <div class="ml-4 flex flex-col md:flex-row items-start md:items-center gap-4">
+                <a class="inline-block px-6 py-4 bg-blue-700 hover:bg-yellow-300 text-white hover:text-black font-black font-heading text-xl border-4 border-black transition-all hover:translate-x-2 hover:translate-y-2 shadow-[8px_8px_0px_0px_#000000] hover:shadow-[6px_6px_0px_0px_#000000]" href="https://www.audacy.com/stations/thescorechicago?action=AUTOPLAY_FULL&actionContentId=101-455">{{ start_time }} (Central)<p><small><small>listen on 104.3 theScore</small></small></p></a>
               </div>
         </div>
-        <div class="border-t-4 border-black py-12">
+        <div class="border-t-2 pl-4 border-black py-12">
           <div class="flex flex-wrap items-center justify-start gap-6">
             <div class="w-auto text-center lg:text-left">
               <p class="max-w-l mb-8 text-xl lg:text-2xl leading-relaxed text-gray-700 font-medium">where to watch/listen:</p>
